@@ -1,5 +1,5 @@
 # Stage 1: Compile
-FROM openjdk:11-jdk-slim AS builder
+FROM eclipse-temurin:11-jdk-jammy AS builder
 
 WORKDIR /app
 COPY src ./src
