@@ -1,8 +1,7 @@
-cat > Dockerfile << 'EOF'
 FROM tomcat:9.0-jdk11
 
 RUN rm -rf /usr/local/tomcat/webapps/*
-RUN apt-get update && apt-get install -y ant && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y default-jdk && rm -rf /var/lib/apt/lists/*
 
 COPY src /app/src
 COPY WebContent /app/WebContent
@@ -21,4 +20,3 @@ ENV DB_USER=root
 ENV DB_PASSWORD=root
 
 EXPOSE 8080
-EOF
